@@ -4,38 +4,218 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .section1 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        padding: 0px 50px 0px 50px;
+      }
+      .section2 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        padding: 0px 50px 0px 50px;
+      }
+      .container1 {
+        display: flex;
+        justify-content: space-between;
+        flex: 1 1 100%; /* ← 横幅が狭いときは縦並びにする */
+        min-width: 0;
+        gap: 20px;
+      }
+
+      .container2 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box0 {
+        background-color: white;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        border: 2px solid white;
+        border-radius: 15px;
+      }
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 16px;
+      }
+      .box1 {
+        box-sizing: border-box;
+        width: 280px;
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+      @media (min-width: 600px) {
+        .box1 {
+          flex: 1 1 45%;
+        }
+      }
+      .box1 input {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .box2 {
+        box-sizing: border-box;
+      }
+      .box3 {
+        margin: 0 auto;
+      }
+      .font3 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+        font-weight: bold;
+      }
+      .col {
+        color: red;
+      }
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 16px;
+        resize: vertical;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <h1 style="text-align: center; color: blue">Student Registration</h1>
-      <h3 style="text-align: center">
-        Please fill out all required fields to complete your registration
-      </h3>
+    <div style="background-color: mediumpurple">
+      <div class="box0">
+        <div class="section1">
+          <h1 style="text-align: center; color: purple">
+            Student Registration
+          </h1>
+          <h3 style="text-align: center; color: grey">
+            Please fill out all required fields to complete your registration
+          </h3>
+        </div>
+        <br />
+        <div class="section2">
+          <div class="container1">
+            <div class="box1">
+              <label class="font3" for="firstname"
+                >First Name <span class="col">*</span></label
+              ><br />
+              <input type="text" id="firstname" name="firstname" />
+            </div>
+            <div class="box1">
+              <label class="font3" for="lastname"
+                >Last Name <span class="col">*</span></label
+              ><br />
+              <input type="text" id="lastname" name="lastname" />
+            </div>
+          </div>
+          <br />
+          <div>
+            <label class="font3" for="email"
+              >Email Address <span class="col">*</span></label
+            ><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              style="width: 100%; box-sizing: border-box"
+            />
+          </div>
+          <br />
+          <div class="container1">
+            <div class="box1">
+              <label class="font3" for="phone">Phone Number</label><br />
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="box1">
+              <label class="font3" for="birth">Date of Birth</label><br />
+              <input type="date" id="birth" name="birth" />
+            </div>
+          </div>
+          <br />
+          <div>
+            <label class="font3" for="program"
+              >Program of Study <span class="col">*</span></label
+            ><br />
+            <select id="program" name="program">
+              <option value="saturday">Select your program</option>
+              <option value="sunday">Conputer Science</option>
+              <option value="monday">Engineering</option>
+              <option value="tuesday">Business Administration</option>
+              <option value="wednesday">Liberal Arts</option>
+              <option value="thursday">Natural Sciences</option>
+              <option value="friday">Other</option>
+            </select>
+          </div>
+          <br />
+          <div>
+            <p class="font3">Year Level <span class="col">*</span></p>
+            <input type="radio" id="freshman" name="freshman" />
+            <label for="freshman">Freshman</label>
+            <input type="radio" id="sophoomore" name="sophoomore" />
+            <label for="sophoomore">Sophoomore</label>
+            <input type="radio" id="junior" name="junior" />
+            <label for="junior">Junior</label>
+            <input type="radio" id="senior" name="senior" />
+            <label for="senior">Senior</label>
+          </div>
+          <br />
+          <div>
+            <p class="font3">Interests (Select all that apply)</p>
+            <div class="container2">
+              <div class="box2">
+                <input
+                  type="checkbox"
+                  name="sportrecreation"
+                  id="sportrecreation"
+                />
+                <label for="sportrecreation">Sports & Recreation</label><br />
+                <input type="checkbox" name="technology" id="technology" />
+                <label for="technology">Technology</label><br />
+                <input
+                  type="checkbox"
+                  name="readingwriting"
+                  id="readingwriting"
+                />
+                <label for="readingwriting">Reading & Writing</label>
+              </div>
+              <div class="box2">
+                <input type="checkbox" name="musicarts" id="musicarts" />
+                <label for="musicarts">Music & Arts</label><br />
+                <input type="checkbox" name="volunteering" id="volunteering" />
+                <label for="volunteering">Volunteering</label><br />
+                <input
+                  type="checkbox"
+                  name="travelculture"
+                  id="travelculture"
+                />
+                <label for="travelculture">Travel & Culture</label>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div>
+            <label class="font3" for="comments">Additional Comments</label
+            ><br />
+            <textarea
+              id="comments"
+              rows="3"
+              placeholder="Tell us anything else you'd like us to know..."
+            ></textarea>
+            <br /><br />
+            <div align="center">
+              <input
+                type="submit"
+                value="Complete Registration"
+                style="
+                  background-color: purple;
+                  color: white;
+                  border: none;
+                  border-radius: 10px;
+                  padding: 10px 20px;
+                "
+              />
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
     </div>
-    <br />
-    <div>
-      <label for="firstname">First Name *</label><br />
-      <input type="text" id="firstname" name="firstname" />
-      <label for="lastname">Last Name *</label><br />
-      <input type="text" id="lastname" name="lastname" />
-    </div>
-    <br />
-    <div>
-      <label for="email">Email Address *</label><br />
-      <input type="email" id="email" name="email" />
-    </div>
-    <br />
-    <div>
-      <label for="phone">Phone Number</label><br />
-      <input type="tel" id="phone" name="phone" />
-      <label for="birth">Date of Birth</label><br />
-      <input type="date" id="birth" name="birth" />
-    </div>
-    <br />
-    <div>
-      <label for="program">Program of Study *</label><br />
-      <input type="tel" id="program" name="program" />
-    </div>
-    <br />
   </body>
 </html>
